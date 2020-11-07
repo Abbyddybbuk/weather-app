@@ -12,7 +12,8 @@ const forecast = (latitude, longitude, callback) => {
           callback(`No response found for location ${latitude},${longitude}`, undefined)
        } else {
           callback(undefined, {
-             forecast: response.body.current.temperature
+            forecast: `Current temperature in ${response.body.location.name} is ${response.body.current.temperature} deg celsius. There is ${response.body.current.precip}% chance of rain. 
+                       It feels like ${response.body.current.feelslike}`
           })
        }
     })
