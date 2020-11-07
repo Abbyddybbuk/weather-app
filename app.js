@@ -1,6 +1,6 @@
 const request = require('request')
 const geocode = require('./utils/geocode')
-
+const forecast = require('./utils/forecast')
 // const url = 'http://api.weatherstack.com/current?access_key=39b7484969b5faa43a71c1af2e0e551d&%20query=Gwalior'
 
 // request({ url: url, json: true }, (error, response) => {
@@ -29,6 +29,14 @@ const geocode = require('./utils/geocode')
 //    }
 // })
 geocode('Gwalior', (error, response) => {
+   if (error) {
+      console.log(`ERROR: ${error}`)
+   } else {
+      console.log(response)
+   }
+})
+
+forecast('26.224', '78.179', (error, response) => {
    if (error) {
       console.log(`ERROR: ${error}`)
    } else {
