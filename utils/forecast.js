@@ -8,7 +8,7 @@ const forecast = (latitude, longitude, callback) => {
     request({ url: forecastUrl, json: true }, (error, response) => {
        if (error) {
           callback('API could not be reached!', undefined)
-       } else if (!response.success === undefined) {
+       } else if (response.body.error) {
           callback(`No response found for location ${latitude},${longitude}`, undefined)
        } else {
           callback(undefined, {
