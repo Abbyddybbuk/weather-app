@@ -36,7 +36,7 @@ geocode('Gwalior', (error, response) => {
    }
 })
 
-forecast('26.224', '78.179', (error, response) => {
+forecast(26.224, 78.179, (error, response) => {
    if (error) {
       console.log(`ERROR: ${error}`)
    } else {
